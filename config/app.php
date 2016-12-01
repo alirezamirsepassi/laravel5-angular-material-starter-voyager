@@ -182,6 +182,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\ResponseMacroServiceProvider::class,
 
+        TCG\Voyager\VoyagerServiceProvider::class,
     ],
 
     /*
