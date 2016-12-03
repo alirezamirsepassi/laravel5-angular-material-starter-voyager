@@ -1,3 +1,77 @@
+# laravel5-angular-material-starter-voyager 
+you can use this https://github.com/followtheart/laravel5-angular-material-starter-voyager.git  directly,
+Or you can do it yourself, just follow steps below:
+
+# Step 1, laravel5-starter
+Also see here :https://laravel-angular.readme.io/docs
+```bash
+git clone https://github.com/jadjoubran/laravel5-angular-material-starter.git
+cd laravel5-angular-material-starter
+npm install -g gulp bower
+npm install
+bower install
+#fix database credentials in .env
+php artisan migrate
+gulp
+```
+# Step 2, voyager
+Also see here: https://github.com/the-control-group/voyager
+```bash
+composer require tcg/voyager
+```
+
+Next make sure to create a new database and add your database credentials to your .env file:
+
+```
+DB_HOST=localhost
+DB_DATABASE=homestead
+DB_USERNAME=homestead
+DB_PASSWORD=secret
+```
+
+Add the Voyager service provider to the `config/app.php` file in the `providers` array:
+
+```php
+'providers' => [
+    // Laravel Framework Service Providers...
+    //...
+    
+    // Package Service Providers
+    TCG\Voyager\VoyagerServiceProvider::class,
+    // ...
+    
+    // Application Service Providers
+    // ...
+],
+```
+
+Lastly, we can install voyager by running
+
+```bash
+php artisan voyager:install
+```
+
+# extra steps:
+```php
+##(ONLY IN STARTER!!)  
+php artisan migrate:refresh
+php artisan db:seed --class=VoyagerDatabaseSeeder
+```
+# run server
+```php
+php artisan serve 
+```
+
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------
+
 ## Laravel 5.3 Angular Material Starter
 
 [![Latest Stable Version](https://poser.pugx.org/jadjoubran/laravel5-angular-material-starter/v/stable)](https://packagist.org/packages/jadjoubran/laravel5-angular-material-starter)
